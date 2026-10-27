@@ -33,6 +33,7 @@ export default async function PipelinePage() {
       <p className="inline-block rounded bg-terracotta-600 px-2 py-1 text-xs font-bold tracking-widest text-white">{t("badge")}</p>
       <h1 className="mt-3 font-serif text-3xl text-ink-900">{t("title")}</h1>
       <p className="mt-3 max-w-3xl text-ink-700">{t("intro")}</p>
+      <p className="mt-2 max-w-3xl text-sm text-ink-600">{t("simulator")}</p>
 
       {!latest ? (
         <p className="mt-8 text-ink-600">{t("noRuns")}</p>
