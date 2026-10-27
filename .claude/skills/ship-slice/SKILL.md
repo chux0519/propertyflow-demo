@@ -18,7 +18,7 @@ Order matters: the web build queries the database, and the VPS runs whatever was
    390px width. Make sure no stale `next-server` is still bound to the port.
 4. **Schema to production before code**: `pnpm exec supabase db push --linked --dry-run`, then without `--dry-run`.
 5. **Commit and push** to `main`; wait for CI (`check` and `db-integration`) and the Vercel deployment.
-6. **Importer changes**: `deploy/push-to-vps.sh racknerd`, then
+6. **Importer changes**: `deploy/push-to-vps.sh <vps-host>`, then
    `sudo systemctl start propertyflow-import.service` and read `journalctl -u propertyflow-import`.
 7. **Verify production**: `BASE_URL=https://propertyflow.potafree.net pnpm e2e`.
 8. Update README status only with what was actually verified.
