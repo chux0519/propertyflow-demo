@@ -1,0 +1,10 @@
+[Unit]
+Description=PropertyFlow: Supabase keepalive every 12 hours
+
+[Timer]
+OnCalendar=*-*-* 00,12:00:00 UTC
+RandomizedDelaySec=30min
+Persistent=true
+
+[Install]
+WantedBy=timers.target

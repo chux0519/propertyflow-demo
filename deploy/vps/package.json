@@ -1,0 +1,10 @@
+{
+  "name": "propertyflow-importer-runtime",
+  "private": true,
+  "type": "module",
+  "description": "Runtime dependencies of the importer on the VPS (the web app is not deployed here).",
+  "dependencies": {
+    "pg": "8.23.1",
+    "saxes": "6.0.0"
+  }
+}

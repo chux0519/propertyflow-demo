@@ -1,0 +1,32 @@
+[Unit]
+Description=PropertyFlow: import the simulated Kyero feed
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=propertyflow
+Group=propertyflow
+# DATABASE_URL (session pooler). Root-owned, mode 0600, never in git.
+EnvironmentFile=/etc/propertyflow/importer.env
+Environment=PATH=/opt/node/bin:/usr/bin:/bin
+StateDirectory=propertyflow
+ExecStart=/opt/propertyflow/deploy/vps/run-import.sh
+TimeoutStartSec=10min
+# The importer also takes a PostgreSQL advisory lock per source, so overlapping
+# runs (manual + timer) are refused even across machines.
+Nice=10
+MemoryMax=400M
+
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+LockPersonality=true
+CapabilityBoundingSet=

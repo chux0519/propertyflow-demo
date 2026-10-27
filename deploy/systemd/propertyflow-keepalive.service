@@ -1,0 +1,18 @@
+[Unit]
+Description=PropertyFlow: keep the free-tier Supabase project active
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=propertyflow
+Group=propertyflow
+# SUPABASE_URL and SUPABASE_PUBLISHABLE_KEY (public, browser-safe key)
+EnvironmentFile=/etc/propertyflow/keepalive.env
+ExecStart=/opt/propertyflow/deploy/vps/keepalive.sh
+TimeoutStartSec=2min
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+CapabilityBoundingSet=
