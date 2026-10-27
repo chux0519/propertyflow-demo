@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root [<!ENTITY xxe SYSTEM "file:///etc/passwd">]>
+<root><kyero><feed_version>3</feed_version></kyero>
+<property><id>XXE-1</id><date>2026-01-01 00:00:00</date><ref>x</ref><price>1</price>
+<price_freq>sale</price_freq><type>villa</type><town>&xxe;</town><province>Alicante</province>
+<desc><en>attack</en></desc></property></root>

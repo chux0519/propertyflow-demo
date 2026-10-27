@@ -8,16 +8,23 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "next typegen && tsc --noEmit",
-    "test": "vitest run --passWithNoTests"
+    "test": "vitest run --passWithNoTests",
+    "importer": "node --env-file-if-exists=.env.importer workers/importer/cli.ts",
+    "fixtures": "node scripts/kyero-fixture.ts"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.118.0",
     "next": "16.4.3",
+    "next-intl": "4.14.9",
+    "pg": "^8.23.1",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "saxes": "6.0.0"
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "^4",
-    "@types/node": "^20",
+    "@types/node": "^24.19.2",
+    "@types/pg": "^8.23.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
@@ -27,5 +34,6 @@
     "typescript": "^5",
     "vitest": "^5.0.5"
   },
-  "packageManager": "pnpm@12.4.1"
+  "packageManager": "pnpm@12.4.1",
+  "type": "module"
 }
