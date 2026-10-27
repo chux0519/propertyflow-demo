@@ -165,8 +165,14 @@ export function parseKyeroDate(value: string): Date {
   return date;
 }
 
-const titleCase = (s: string) =>
-  s.toLocaleLowerCase("es").replace(/(^|[\s-])(\p{L})/gu, (_m, sep: string, ch: string) => sep + ch.toLocaleUpperCase("es"));
+// "SAN PEDRO DEL PINATAR" / "san pedro del pinatar" -> "San Pedro del Pinatar"
+const LOWERCASE_WORDS = new Set(["de", "del", "la", "las", "los", "el", "y", "i", "d"]);
+export const titleCase = (s: string) =>
+  s
+    .toLocaleLowerCase("es")
+    .split(/(\s+|-)/)
+    .map((w, i) => (i > 0 && LOWERCASE_WORDS.has(w) ? w : w.charAt(0).toLocaleUpperCase("es") + w.slice(1)))
+    .join("");
 
 function parseLocation(node: XNode): NormalizedProperty["location"] {
   const loc = child(node, "location");

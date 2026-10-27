@@ -136,3 +136,11 @@ describe("helpers", () => {
     expect(() => parseKyeroDate("2023-01-01 24:00:00")).toThrow();
   });
 });
+
+describe("titleCase", () => {
+  it("keeps Spanish particles lowercase", async () => {
+    const { titleCase } = await import("../workers/importer/adapters/kyero.ts");
+    expect(titleCase("SAN PEDRO DEL PINATAR")).toBe("San Pedro del Pinatar");
+    expect(titleCase("la nucia")).toBe("La Nucia");
+  });
+});

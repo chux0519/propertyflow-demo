@@ -41,9 +41,9 @@
       <feature>sea views</feature>
     </features>
     <images>
-      <image id="1"><url>https://picsum.photos/seed/propertyflow-21/1600/1200.jpg</url></image>
-      <image id="2"><url>https://picsum.photos/seed/propertyflow-29/1600/1200.jpg</url></image>
-      <image id="3"><url>https://picsum.photos/seed/propertyflow-19/1600/1200.jpg</url></image>
+      <image id="1"><url>https://picsum.photos/id/215/1600/1200.jpg</url></image>
+      <image id="2"><url>https://picsum.photos/id/372/1600/1200.jpg</url></image>
+      <image id="3"><url>https://picsum.photos/id/199/1600/1200.jpg</url></image>
     </images>
   </property>
   <property>
@@ -83,10 +83,10 @@
       <feature>fitted kitchen</feature>
     </features>
     <images>
-      <image id="1"><url>https://picsum.photos/seed/propertyflow-5/1600/1200.jpg</url></image>
-      <image id="2"><url>https://picsum.photos/seed/propertyflow-15/1600/1200.jpg</url></image>
-      <image id="3"><url>https://picsum.photos/seed/propertyflow-5/1600/1200.jpg</url></image>
-      <image id="4"><url>https://picsum.photos/seed/propertyflow-30/1600/1200.jpg</url></image>
+      <image id="1"><url>https://picsum.photos/id/16/1600/1200.jpg</url></image>
+      <image id="2"><url>https://picsum.photos/id/116/1600/1200.jpg</url></image>
+      <image id="3"><url>https://picsum.photos/id/14/1600/1200.jpg</url></image>
+      <image id="4"><url>https://picsum.photos/id/374/1600/1200.jpg</url></image>
     </images>
   </property>
   <property>
@@ -126,10 +126,10 @@
       <feature>fitted kitchen</feature>
     </features>
     <images>
-      <image id="1"><url>https://picsum.photos/seed/propertyflow-30/1600/1200.jpg</url></image>
-      <image id="2"><url>https://picsum.photos/seed/propertyflow-10/1600/1200.jpg</url></image>
-      <image id="3"><url>https://picsum.photos/seed/propertyflow-28/1600/1200.jpg</url></image>
-      <image id="4"><url>https://picsum.photos/seed/propertyflow-10/1600/1200.jpg</url></image>
+      <image id="1"><url>https://picsum.photos/id/374/1600/1200.jpg</url></image>
+      <image id="2"><url>https://picsum.photos/id/75/1600/1200.jpg</url></image>
+      <image id="3"><url>https://picsum.photos/id/372/1600/1200.jpg</url></image>
+      <image id="4"><url>https://picsum.photos/id/75/1600/1200.jpg</url></image>
     </images>
   </property>
 </root>

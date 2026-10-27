@@ -82,6 +82,10 @@ const EXTRAS: [string, string, string][] = [
   ["sea views", "Sea views from the main bedroom.", "Meerblick vom Hauptschlafzimmer."],
 ];
 
+// Lorem Picsum photo ids hand-picked for a coastal / Mediterranean look (placeholders only;
+// they do not show the listed homes).
+const PHOTO_IDS = [10, 12, 13, 14, 16, 37, 49, 74, 75, 77, 78, 108, 116, 162, 163, 164, 199, 215, 281, 308, 322, 323, 350, 369, 372, 374];
+
 function rng(seed: number) {
   let a = seed >>> 0;
   return () => {
@@ -134,7 +138,7 @@ export function generateKyeroFeed(opts: FeedOptions): string {
     const lat = town.lat + (r() - 0.5) * 0.04;
     const lng = town.lng + (r() - 0.5) * 0.04;
     const imageCount = between([3, 6]);
-    const imageSeeds = Array.from({ length: imageCount }, () => between([1, 30]));
+    const photoIds = Array.from({ length: imageCount }, () => pick(PHOTO_IDS));
     const hasGerman = r() > 0.1; // ~10% exercise the EN fallback
     const energy = pick(["A", "B", "C", "D", "E", "X"]);
 
@@ -209,8 +213,8 @@ export function generateKyeroFeed(opts: FeedOptions): string {
       ...[pool ? "private pool" : "", ...extras.map((e) => e[0])].filter(Boolean).map((f) => `      <feature>${f}</feature>`),
       "    </features>",
       "    <images>",
-      ...imageSeeds.map(
-        (s, i) => `      <image id="${i + 1}"><url>https://picsum.photos/seed/propertyflow-${s}/1600/1200.jpg</url></image>`,
+      ...photoIds.map(
+        (id, i) => `      <image id="${i + 1}"><url>https://picsum.photos/id/${id}/1600/1200.jpg</url></image>`,
       ),
       "    </images>",
       "  </property>",
